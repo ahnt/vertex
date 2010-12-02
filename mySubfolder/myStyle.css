@@ -1,0 +1,80 @@
+/* CSS Document */
+
+body {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:75%;
+	color:#777;
+	width: 1024px;
+	margin: auto;
+}
+
+mainTitle {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:75%;
+	color:#777;
+	margin:auto;
+	text-align:center;
+}
+
+hr.dividorLine {
+	color: #f00;
+	background-color: #d9fe4c;
+	height: 5px;
+}
+
+table.masterTable {
+	width:768px;
+	margin:auto;
+}
+
+caption.tableHeader{
+	text-align:left;
+}
+
+td.bigNumber {
+	width:256px;
+	height:100px;
+	color:#000;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#777;
+	font-size:50px;
+	text-align:top;
+	border-right:1px solid black;
+	border-bottom:1px solid black;
+	border: outset 5px;
+	margin-left:24px;
+	margin-top:24px;
+	vertical-align:top;
+}
+td.selector{
+	width:256px;
+	color:#000;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000;
+	font-size:15px;
+	text-align:top;
+	border-right:1px solid black;
+	border-bottom:1px solid black;
+	border: outset 5px;
+	margin-left:24px;
+	margin-top:24px;
+	vertical-align:top;
+}
+p.subtext {
+	font-size:16px;
+	color:#000;
+	vertical-align:top;
+}
+
+.spinner {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -50px; /* half width of the spinner gif */
+	margin-top: -50px; /* half height of the spinner gif */
+	text-align:center;
+	z-index:1234;
+	overflow: auto;
+	width: 120px; /* width of the spinner gif */
+	height: 122px; /*hight of the spinner gif +2px to fix IE8 issue */
+}

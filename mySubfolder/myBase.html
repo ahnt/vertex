@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% block head %}
+	<link rel="stylesheet" href="/css" />    
+	<title>{% block title %}{% endblock %}VERTEX</title>
+    {% endblock %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			$('#buttonUpload').click(function() {
+				$('#spinner').show();
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1 class="mainTitle">VERTEX</h1>
+	{{ registerText }}
+	<hr class="dividorLine" />
+	</div>
+	<div id="spinner" class="spinner" style="display:none;"> <img id="img-spinner" src="/imageFolder/largeLoaderTest.gif" alt="Loading"/></div>	
+	{{ theUser }}
+	<table class="masterTable">
+		<caption class="tableHeader">three easy steps:</caption>
+		<tr>
+			<td class="bigNumber">1.<img src="/imageFolder/databaseIcon.png" alt="files" /><p class="subtext">specify your dataset</p></td>
+			<td class="bigNumber">2.<img src="/imageFolder/categoryIcon.png" alt="files" /><p class="subtext">choose the pipeline</p></td>
+			<td class="bigNumber">3.<img src="/imageFolder/cloudIcon.png" alt="files" /><p class="subtext">start your EC2 instance</p></td>
+		</tr>
+		<tr>
+			<form name="input" action="dataSubmitted" method="post">
+			<td class="selector">
+				<select>
+  					<optgroup label="type of dataset">
+    					<option value="singleFile">single file</option>
+    					<option value="folder">folder</option>
+					</optgroup>
+					<input id="myfile" name="myfile" type="file">
+				</select>
+			</td>
+			<td class="selector">
+				<select>
+  					<optgroup label="different Pipelines">
+    					<option value="pipeline A">pipe A</option>
+    					<option value="pipeline B">pipe B</option>
+					</optgroup>
+				</select>
+			</td>
+			<td class="selector">
+				<p>Amazon credentials</p>
+					<p>accessKey: <input type="password" name="accessKey" value="{{ accessKey }}"/></p>
+					<p>secretKey: <input type="password" name="secretKey" value="{{ secretKey }}"/></p>
+					<p>pkName: <input type="text" name="pkName" value="{{ pkName }}"/>
+					</p><p><input id="buttonUpload" type="submit" value="Submit" /></p>
+			</td>
+			</form>
+		</tr>
+	</table>
+	<p>{{ myData }} </p>
+	<hr class="dividorLine" />
+	<p> nextGen VERTEX is a <b>pre-publication</b> product of the <a href='http://ged.msu.edu/'>GED lab</a> <br> &copy Michigan State University
+    </div>
+
+</body>

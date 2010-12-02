@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% block head %}
+	<link rel="stylesheet" href="/css" />    
+	<title>{% block title %}{% endblock %}VERTEX</title>
+    {% endblock %}
+	<script type="text/javascript">
+	function validate_required(field,alerttxt)
+	{
+		with (field){
+  			if (value==null||value==""){
+			    alert(alerttxt);return false;
+    		}
+  			else{
+ 			   return true;
+    		}
+  		}
+	}
+	function validate_checked(field,alerttxt){
+		with(field){
+			if((checked == 0)||(checked==null)){
+				alert(alerttxt);
+				return false;
+			}
+	  		else
+	  			return true;
+ 		}
+ 	}
+	function validate_form(thisform){
+		with (thisform){
+		  if (
+		  	(validate_required(user,"Please fill in a user name, otherwise we can not process this form")==false)||
+			(validate_required(pwd,"password must not be blank")==false)||
+			(validate_required(accessKey,"Please provide the accessKey")==false)||
+			(validate_required(secretKey,"Please provide the secretKey")==false)||
+			(validate_required(pkName,"Please provide the name of your keypair")==false)||
+			(validate_checked(readTC,"you must read and understand and agree to the terms and conditions, you verify that by checking the box")==false)
+			)
+		  {
+		  	return false;
+		  }
+		  return true;
+  	}
+}	</script>
+</head>
+<body>
+	<h1 class="mainTitle">VERTEX</h1>
+	<hr class="dividorLine" />
+	</div>
+	<h3>Registration</h3>
+	{{ errorFeedback }}
+	<p>Please enter the required data below:</p>
+	<form name="feedback" action="registerThisUser" method="post" onSubmit="return validate_form(this)">
+		<p>user name: <input type="text" name="user"/>  just invent one</p>
+		<p>password: <input type="password" name="pwd"/> you are reliable for coming up with a good one, if this one get's hacked it is yout fault</p>
+		<p>accessKey: <input type="password" name="accessKey"/> login to Amazon EC2 and check your security credentials</p>
+		<p>secretKey: <input type="password" name="secretKey"/> login to Amazon EC2 and check your security credentials</p>
+		<p>pkName: <input type="text" name="pkName"/> you got a key pair file from Amazon, provide the name without the file extension .pem</p>
+		<p><input type="checkbox" name="readTC" value="readTC" /> I have read and understood and agree to the terms and conditions<p/>
+		<p><input type="submit" value="Submit" /></p>
+	</form>
+	<hr class="dividorLine" />
+	<p> nextGen VERTEX is a <b>pre-publication</b> product of the <a href='http://ged.msu.edu/'>GED lab</a> <br> &copy Michigan State University
+    </div>
+
+</body>
